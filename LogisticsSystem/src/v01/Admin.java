@@ -1,0 +1,19 @@
+package v01;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Admin {
+	private List<Client> clients;
+	public List<Order> trackOrders() {
+		List<Order> orders = new ArrayList<>();
+		for(Client client : clients) {
+			orders.addAll(client.getOrders());
+		}
+		return orders;
+	}
+	
+	public void setPriceForOrder(double price, Order order) {
+		order.setPrice(price);
+	}
+}
